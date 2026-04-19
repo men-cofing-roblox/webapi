@@ -72,4 +72,5 @@ def w_2():
     users.append({"userid": user,"username":username,"job":job,"place":place,"token": token,"exp":exp})
     return f"1|{token}|{exp}", 200, {"Content-Type": "text/plain"}
 
-app.run(debug=False)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
